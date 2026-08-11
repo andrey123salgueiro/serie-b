@@ -1,0 +1,134 @@
+/* Variáveis para padronizar cores e facilitar manutenção */
+:root {
+  --bg-primary: #0f172a;
+  --bg-card: #1e293b;
+  --bg-card-hover: #334155;
+  --accent-color: #22c55e;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --radius: 12px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+}
+
+/* Header / Hero */
+.hero {
+  padding: 40px 0;
+  text-align: center;
+  background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+  border-bottom: 1px solid #334155;
+}
+
+.hero h1 {
+  font-size: 2.2rem;
+  margin-bottom: 8px;
+  color: var(--accent-color);
+}
+
+.hero p {
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+/* Barra de Busca */
+.search-box input {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px 18px;
+  border-radius: 25px;
+  border: 1px solid #334155;
+  background-color: #1e293b;
+  color: var(--text-main);
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.search-box input:focus {
+  border-color: var(--accent-color);
+}
+
+/* Main Layout (CSS Grid) */
+main {
+  flex: 1;
+  padding: 40px 20px;
+}
+
+.grid-times {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+/* Card Individual */
+.card-time {
+  background-color: var(--bg-card);
+  border: 1px solid #334155;
+  border-radius: var(--radius);
+  padding: 20px;
+  text-decoration: none;
+  color: var(--text-main);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.card-time:hover {
+  transform: translateY(-4px);
+  background-color: var(--bg-card-hover);
+  border-color: var(--accent-color);
+}
+
+.badge {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--accent-color);
+  margin-bottom: 12px;
+  font-weight: bold;
+}
+
+.card-time h2 {
+  font-size: 1.25rem;
+  margin-bottom: 16px;
+}
+
+.btn-link {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.card-time:hover .btn-link {
+  color: var(--accent-color);
+}
+
+/* Footer */
+footer {
+  padding: 20px 0;
+  text-align: center;
+  border-top: 1px solid #334155;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
